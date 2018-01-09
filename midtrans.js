@@ -14,7 +14,7 @@ router.post('/', function(req, res, next) {
         hostName = 'app.midtrans.com';
     }
 
-    requestData = '{"transaction_details": {"order_id": "ORDER-BOOKING-HASHIDA_RESTAURANT-01","gross_amount": 10000}}';
+    requestData = '{"transaction_details": {"order_id": "YOUR_ORDER_ID_1", "gross_amount": 10000}}';
     
     options = {
         hostname: hostName,
