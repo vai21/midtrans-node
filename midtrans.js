@@ -10,7 +10,7 @@ router.post('/', function(req, res, next) {
       
     if(process.env.ENVIRONMENT == 'development') {
         hostName = 'app.sandbox.midtrans.com';
-    } else {
+    } else if(process.env.ENVIRONMENT == 'production') {
         hostName = 'app.midtrans.com';
     }
 
