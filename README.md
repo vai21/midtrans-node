@@ -62,6 +62,12 @@ Example response
 ## Deployment
 
 After installing packages and setting up environment and parameters, you can start using midtrans.
+Note:
+Declare 
+```
+midtrans.setTransaction(orderId, priceAmount);
+```
+first in your controller then call API POST localhost:3000/api/midtrans/
 
 
 ## Authors
