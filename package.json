@@ -1,6 +1,6 @@
 {
   "name": "midtrans-node",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "library for SNAP API midtrans",
   "main": "midtrans.js",
   "scripts": {
