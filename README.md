@@ -77,4 +77,6 @@ first in your controller then call API POST localhost:3000/api/midtrans/
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+Donate me a cup of coffee https://www.paypal.me/faisalrasid
