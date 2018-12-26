@@ -22,12 +22,13 @@ A step by step for running midtrans snap API
 Open your default server entry point example (app.js) and add this code below in the top require module:
 
 ```
-var midtrans = require('midtrans-node);
+var midtrans = require('midtrans-node');
 ```
-add parameter order id and amount example (app.js):
+Add parameter order id and amount example (app.js):
 
 ```
 midtrans.setTransaction("Test1", 100000);
+```
 
 And add router from module like this in example (app.js):
 
