@@ -61,7 +61,7 @@ Example response
 
 ## Deployment
 
-After installing packages and setting up environment and parameters, you can use it to using midtrans.
+After installing packages and setting up environment and parameters, you can start using midtrans.
 
 
 ## Authors
