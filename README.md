@@ -12,6 +12,7 @@ What things you need to install the software and how to install them
 
 ```
 npm install nodejs-base64-encode --save
+npm install midtrans-node --save
 ```
 
 ### Installing
@@ -23,11 +24,15 @@ Open your default server entry point example (app.js) and add this code below in
 ```
 var midtrans = require('midtrans-node);
 ```
+add parameter order id and amount example (app.js):
+
+```
+midtrans.setTransaction("Test1", 100000);
 
 And add router from module like this in example (app.js):
 
 ```
-app.use('/api/midtrans', midtrans);
+app.use('/api/midtrans', midtrans.router);
 ```
 
 After that set your key and and environment development/production in example (app.js):
@@ -36,8 +41,6 @@ After that set your key and and environment development/production in example (a
 process.env.MIDTRANS_SANDBOX = 'Your Server Key';
 process.env.ENVIRONMENT = 'development';
 ```
-
-
 
 ## Running the tests
 
@@ -57,7 +60,7 @@ Example response
 
 ## Deployment
 
-Add additional in the module to add your checkout data in json format in node_modules/midtrans-node/midtrans.js
+After installing packages and setting up environment and parameters, you can use it to using midtrans.
 
 
 ## Authors

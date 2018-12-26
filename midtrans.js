@@ -3,6 +3,14 @@ var router = express.Router();
 var encode = require('nodejs-base64-encode');
 var https = require('https');
 
+let orderId = "";
+let grossAmount = "";
+
+function setTransaction(vOrderId, vGrossAmount) {
+    orderId = vOrderId;
+    grossAmount = vGrossAmount;
+}
+
 router.post('/', function(req, res, next) {
     accept = 'application/json';
     contentType = 'application/json';
@@ -14,7 +22,7 @@ router.post('/', function(req, res, next) {
         hostName = 'app.midtrans.com';
     }
 
-    requestData = '{"transaction_details": {"order_id": "YOUR_ORDER_ID_1", "gross_amount": 10000}}';
+    requestData = '{"transaction_details": {"order_id": "' + orderId + '", "gross_amount": ' + grossAmount + '}}';
     
     options = {
         hostname: hostName,
@@ -53,4 +61,7 @@ router.post('/', function(req, res, next) {
     req.end();
 });
 
-module.exports = router;
+module.exports = {
+    router: router, 
+    setTransaction: setTransaction
+};
