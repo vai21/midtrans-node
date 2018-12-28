@@ -36,7 +36,7 @@ And add router from module like this in example (app.js):
 app.use('/api/midtrans', midtrans.router);
 ```
 
-After that set your key and and environment development/production in example (app.js):
+Set your key and environment ('development' / 'production') make sure your key is for development (sandbox) or production in midtrans dashboard. Use this example code with your credentials (app.js):
 
 ```
 process.env.MIDTRANS_SANDBOX = 'Your Server Key';
@@ -72,7 +72,7 @@ first in your controller then call API POST localhost:3000/api/midtrans/
 
 ## Authors
 
-* **Faisal** - *playsure.co* - [vai21](https://github.com/vai21)
+* **Faisal** - *Github* - [vai21](https://github.com/vai21)
 
 
 ## License
