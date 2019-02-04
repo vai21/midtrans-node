@@ -5,10 +5,17 @@ var https = require('follow-redirects').https;
 
 let orderId = "";
 let grossAmount = "";
+let requestData;
 
 function setTransaction(vOrderId, vGrossAmount) {
     orderId = vOrderId;
     grossAmount = vGrossAmount;
+
+    requestData = '{"transaction_details": {"order_id": "' + orderId + '", "gross_amount": ' + grossAmount + '}}';
+}
+
+function setTransactions(ordersArray) {
+    requestData = '{"transaction_details": ' + ordersArray + ' }'
 }
 
 router.get('/', function(req, res) {
@@ -22,8 +29,6 @@ router.get('/', function(req, res) {
         hostName = 'app.midtrans.com';
     }
 
-    requestData = '{"transaction_details": {"order_id": "' + orderId + '", "gross_amount": ' + grossAmount + '}}';
-    
     options = {
         hostname: hostName,
         path: '/snap/v1/transactions',
@@ -63,5 +68,6 @@ router.get('/', function(req, res) {
 
 module.exports = {
     router: router, 
-    setTransaction: setTransaction
+    setTransaction: setTransaction,
+    setTransactions: setTransactions
 };

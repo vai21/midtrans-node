@@ -48,7 +48,7 @@ process.env.ENVIRONMENT = 'development';
 
 To test it, send GET request to this url:
 
-localhost:<Your Port>/api/midtrans/
+example: localhost:8080/api/midtrans/
 
 ### Break down into end to end tests
 
@@ -62,7 +62,7 @@ Declare
 ```
 midtrans.setTransaction(orderId, priceAmount);
 ```
-first in your controller then call API [GET] localhost:<Your Port>/api/midtrans/
+first in your controller then call API [GET] example: localhost:8080/api/midtrans/
 
 
 ## Authors

@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/vai21/midtrans-node#readme",
   "dependencies": {
-    "follow-redirects": "^1.6.1"
+    "follow-redirects": "^1.6.1",
+    "nodejs-base64-encode": "0.0.2"
   }
 }
