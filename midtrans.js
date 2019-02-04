@@ -3,19 +3,10 @@ var router = express.Router();
 var encode = require('nodejs-base64-encode');
 var https = require('follow-redirects').https;
 
-let orderId = "";
-let grossAmount = "";
 let requestData;
 
 function setTransaction(vOrderId, vGrossAmount) {
-    orderId = vOrderId;
-    grossAmount = vGrossAmount;
-
-    requestData = '{"transaction_details": {"order_id": "' + orderId + '", "gross_amount": ' + grossAmount + '}}';
-}
-
-function setTransactions(ordersArray) {
-    requestData = '{"transaction_details": ' + ordersArray + ' }'
+    requestData = '{"transaction_details": {"order_id": "' + vOrderId + '", "gross_amount": ' + vGrossAmount + '}}';
 }
 
 router.get('/', function(req, res) {
@@ -68,6 +59,5 @@ router.get('/', function(req, res) {
 
 module.exports = {
     router: router, 
-    setTransaction: setTransaction,
-    setTransactions: setTransactions
+    setTransaction: setTransaction
 };
