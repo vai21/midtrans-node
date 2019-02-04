@@ -14,6 +14,10 @@ What things you need to install the software and how to install them
 npm install nodejs-base64-encode --save
 npm install midtrans-node --save
 npm install follow-redirects --save
+
+or
+
+npm install
 ```
 
 ### Installing
