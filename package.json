@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/vai21/midtrans-node/issues"
   },
-  "homepage": "https://github.com/vai21/midtrans-node#readme"
+  "homepage": "https://github.com/vai21/midtrans-node#readme",
+  "dependencies": {
+    "follow-redirects": "^1.6.1"
+  }
 }

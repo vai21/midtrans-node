@@ -13,6 +13,7 @@ What things you need to install the software and how to install them
 ```
 npm install nodejs-base64-encode --save
 npm install midtrans-node --save
+npm install follow-redirects --save
 ```
 
 ### Installing
@@ -39,7 +40,7 @@ app.use('/api/midtrans', midtrans.router);
 Set your key and environment ('development' / 'production') make sure your key is for development (sandbox) or production in midtrans dashboard. Use this example code with your credentials (app.js):
 
 ```
-process.env.MIDTRANS_SANDBOX = 'Your Server Key';
+process.env.MIDTRANS_KEY = 'Your Server Key';
 process.env.ENVIRONMENT = 'development';
 ```
 
@@ -51,13 +52,7 @@ localhost:3000/api/midtrans/
 
 ### Break down into end to end tests
 
-Example response
-
-```
-{
-"redirectMidtrans": "https://app.sandbox.veritrans.co.id/snap/v2/vtweb/111ffb21-ba8b-41fb-9fa2-b497a34f863c"
-}
-```
+Response will redirect to midtrans page.
 
 ## Deployment
 
@@ -67,7 +62,7 @@ Declare
 ```
 midtrans.setTransaction(orderId, priceAmount);
 ```
-first in your controller then call API POST localhost:3000/api/midtrans/
+first in your controller then call API POST localhost:yourport/api/midtrans/
 
 
 ## Authors

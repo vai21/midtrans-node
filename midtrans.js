@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var encode = require('nodejs-base64-encode');
-var https = require('https');
+var https = require('follow-redirects').https;
 
 let orderId = "";
 let grossAmount = "";
@@ -11,10 +11,10 @@ function setTransaction(vOrderId, vGrossAmount) {
     grossAmount = vGrossAmount;
 }
 
-router.post('/', function(req, res, next) {
+router.post('/', function(req, res) {
     accept = 'application/json';
     contentType = 'application/json';
-    authString = encode.encode(process.env.MIDTRANS_SANDBOX + ':', 'base64');
+    authString = encode.encode(process.env.MIDTRANS_SERVER_KEY + ':', 'base64');
       
     if(process.env.ENVIRONMENT == 'development') {
         hostName = 'app.sandbox.midtrans.com';
@@ -49,7 +49,7 @@ router.post('/', function(req, res, next) {
         response.on('end', () => {       
             console.log('No more data in response.')           
             jsonObject = JSON.parse(body);
-            res.json({'redirectMidtrans': jsonObject.redirect_url});
+            res.redirect(jsonObject.redirect_url);
         })  
                
     });
