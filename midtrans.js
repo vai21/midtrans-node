@@ -11,7 +11,7 @@ function setTransaction(vOrderId, vGrossAmount) {
     grossAmount = vGrossAmount;
 }
 
-router.post('/', function(req, res) {
+router.get('/', function(req, res) {
     accept = 'application/json';
     contentType = 'application/json';
     authString = encode.encode(process.env.MIDTRANS_SERVER_KEY + ':', 'base64');
