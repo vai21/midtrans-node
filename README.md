@@ -1,6 +1,6 @@
 # midtrans-node
 
-Midtrans SNAP API nodejs
+Midtrans SNAP (Web View) API nodejs
 
 ## Getting Started
 
@@ -40,15 +40,15 @@ app.use('/api/midtrans', midtrans.router);
 Set your key and environment ('development' / 'production') make sure your key is for development (sandbox) or production in midtrans dashboard. Use this example code with your credentials (app.js):
 
 ```
-process.env.MIDTRANS_KEY = 'Your Server Key';
+process.env.MIDTRANS_SERVER_KEY = 'Your Server Key';
 process.env.ENVIRONMENT = 'development';
 ```
 
 ## Running the tests
 
-To test it, send POST request to this url:
+To test it, send GET request to this url:
 
-localhost:3000/api/midtrans/
+localhost:<Your Port>/api/midtrans/
 
 ### Break down into end to end tests
 
@@ -62,7 +62,7 @@ Declare
 ```
 midtrans.setTransaction(orderId, priceAmount);
 ```
-first in your controller then call API POST localhost:yourport/api/midtrans/
+first in your controller then call API [GET] localhost:<Your Port>/api/midtrans/
 
 
 ## Authors
